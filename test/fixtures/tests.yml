@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_name: MyText
+  level: 1
+  category: one
+
+two:
+  test_name: MyText
+  level: 1
+  category: two
