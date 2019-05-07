@@ -2487,3 +2487,1409 @@ Migrating to CreateResults (20190506193312)
   ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT tests.title FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "Инженерный"]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "test_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_53be79783a"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+, CONSTRAINT "fk_rails_7f0d5a2cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT tests.title FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "as"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT tests.title FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."title" DESC[0m  [["title", "as"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT tests.title FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."name" = ? ORDER BY "tests"."name" DESC[0m  [["name", "as"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."name" = ? ORDER BY "tests"."name" DESC[0m  [["name", "as"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "as"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерный"]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" join results on results.test_id = tests.id WHERE "tests"."level" = ? AND "results"."user_id" IS NULL LIMIT ?[0m  [["level", 4], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "test_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_53be79783a"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+, CONSTRAINT "fk_rails_7f0d5a2cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190506193312_create_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ db/migrate/20190507205018_add_results_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Инженерный"], ["created_at", "2019-05-07 19:11:38.793606"], ["updated_at", "2019-05-07 19:11:38.793606"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Экономический"], ["created_at", "2019-05-07 19:11:38.797676"], ["updated_at", "2019-05-07 19:11:38.797676"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Гуманитарный"], ["created_at", "2019-05-07 19:11:38.801013"], ["updated_at", "2019-05-07 19:11:38.801013"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Инженерный"], ["created_at", "2019-05-07 19:12:20.902116"], ["updated_at", "2019-05-07 19:12:20.902116"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Экономический"], ["created_at", "2019-05-07 19:12:20.906093"], ["updated_at", "2019-05-07 19:12:20.906093"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Гуманитарный"], ["created_at", "2019-05-07 19:12:20.909558"], ["updated_at", "2019-05-07 19:12:20.909558"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.4ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Физика"], ["level", 2], ["category_id", 4], ["created_at", "2019-05-07 19:12:20.934534"], ["updated_at", "2019-05-07 19:12:20.934534"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Сопротивление материалов"], ["level", 3], ["category_id", 4], ["created_at", "2019-05-07 19:12:20.939000"], ["updated_at", "2019-05-07 19:12:20.939000"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Макроэкономика"], ["level", 2], ["category_id", 5], ["created_at", "2019-05-07 19:12:20.943165"], ["updated_at", "2019-05-07 19:12:20.943165"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Финансы"], ["level", 3], ["category_id", 5], ["created_at", "2019-05-07 19:12:20.947559"], ["updated_at", "2019-05-07 19:12:20.947559"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Отечестванная итература"], ["level", 2], ["category_id", 6], ["created_at", "2019-05-07 19:12:20.952065"], ["updated_at", "2019-05-07 19:12:20.952065"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иностранная литература"], ["level", 3], ["category_id", 6], ["created_at", "2019-05-07 19:12:20.956469"], ["updated_at", "2019-05-07 19:12:20.956469"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какой тепловой процесс сопровождается понижением температуры?"], ["test_id", 1], ["created_at", "2019-05-07 19:12:20.966167"], ["updated_at", "2019-05-07 19:12:20.966167"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нормативное сопротивление для пластичных материалов равно:"], ["test_id", 2], ["created_at", "2019-05-07 19:12:20.970321"], ["updated_at", "2019-05-07 19:12:20.970321"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какая страна обладает самой крупной экономикой?"], ["test_id", 3], ["created_at", "2019-05-07 19:12:20.973813"], ["updated_at", "2019-05-07 19:12:20.973813"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Что такое разность между лучшими ценами на продажу и на покупку?"], ["test_id", 4], ["created_at", "2019-05-07 19:12:20.977241"], ["updated_at", "2019-05-07 19:12:20.977241"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Война и Мир?"], ["test_id", 5], ["created_at", "2019-05-07 19:12:20.980798"], ["updated_at", "2019-05-07 19:12:20.980798"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Хроники Амбера?"], ["test_id", 6], ["created_at", "2019-05-07 19:12:20.983932"], ["updated_at", "2019-05-07 19:12:20.983932"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Исправение"], ["question_id", 1], ["created_at", "2019-05-07 19:12:20.994387"], ["updated_at", "2019-05-07 19:12:20.994387"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нагревание"], ["question_id", 1], ["created_at", "2019-05-07 19:12:20.998274"], ["updated_at", "2019-05-07 19:12:20.998274"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Предел текучести"], ["question_id", 2], ["created_at", "2019-05-07 19:12:21.002038"], ["updated_at", "2019-05-07 19:12:21.002038"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Предел прочности"], ["question_id", 2], ["created_at", "2019-05-07 19:12:21.010235"], ["updated_at", "2019-05-07 19:12:21.010235"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "США"], ["question_id", 3], ["created_at", "2019-05-07 19:12:21.053247"], ["updated_at", "2019-05-07 19:12:21.053247"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Китай"], ["question_id", 3], ["created_at", "2019-05-07 19:12:21.057747"], ["updated_at", "2019-05-07 19:12:21.057747"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Спред"], ["question_id", 4], ["created_at", "2019-05-07 19:12:21.061252"], ["updated_at", "2019-05-07 19:12:21.061252"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Бид"], ["question_id", 4], ["created_at", "2019-05-07 19:12:21.066087"], ["updated_at", "2019-05-07 19:12:21.066087"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Л.Н.Толстой"], ["question_id", 5], ["created_at", "2019-05-07 19:12:21.069284"], ["updated_at", "2019-05-07 19:12:21.069284"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "А.С.Пушкин"], ["question_id", 5], ["created_at", "2019-05-07 19:12:21.072456"], ["updated_at", "2019-05-07 19:12:21.072456"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Роджер Желязны"], ["question_id", 6], ["created_at", "2019-05-07 19:12:21.075783"], ["updated_at", "2019-05-07 19:12:21.075783"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Джордж Мартин"], ["question_id", 6], ["created_at", "2019-05-07 19:12:21.078826"], ["updated_at", "2019-05-07 19:12:21.078826"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иван"], ["middle_name", "Иванович"], ["surname", "Иванов"], ["created_at", "2019-05-07 19:12:21.088648"], ["updated_at", "2019-05-07 19:12:21.088648"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Алексей"], ["middle_name", "Алексеввич"], ["surname", "Алексеев"], ["created_at", "2019-05-07 19:12:21.092971"], ["updated_at", "2019-05-07 19:12:21.092971"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерный"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерныывай"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Гуманитарный"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" join results on results.test_id = tests.id WHERE "tests"."level" = ? AND "results"."user_id" = ? LIMIT ?[0m  [["level", 1], ["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Инженерный"], ["created_at", "2019-05-07 19:17:40.017149"], ["updated_at", "2019-05-07 19:17:40.017149"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Экономический"], ["created_at", "2019-05-07 19:17:40.021700"], ["updated_at", "2019-05-07 19:17:40.021700"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Гуманитарный"], ["created_at", "2019-05-07 19:17:40.025472"], ["updated_at", "2019-05-07 19:17:40.025472"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Физика"], ["level", 2], ["category_id", 7], ["created_at", "2019-05-07 19:17:40.042300"], ["updated_at", "2019-05-07 19:17:40.042300"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Сопротивление материалов"], ["level", 3], ["category_id", 7], ["created_at", "2019-05-07 19:17:40.046868"], ["updated_at", "2019-05-07 19:17:40.046868"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Макроэкономика"], ["level", 2], ["category_id", 8], ["created_at", "2019-05-07 19:17:40.051259"], ["updated_at", "2019-05-07 19:17:40.051259"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Финансы"], ["level", 3], ["category_id", 8], ["created_at", "2019-05-07 19:17:40.055963"], ["updated_at", "2019-05-07 19:17:40.055963"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Отечестванная итература"], ["level", 2], ["category_id", 9], ["created_at", "2019-05-07 19:17:40.060349"], ["updated_at", "2019-05-07 19:17:40.060349"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иностранная литература"], ["level", 3], ["category_id", 9], ["created_at", "2019-05-07 19:17:40.065242"], ["updated_at", "2019-05-07 19:17:40.065242"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какой тепловой процесс сопровождается понижением температуры?"], ["test_id", 7], ["created_at", "2019-05-07 19:17:40.074540"], ["updated_at", "2019-05-07 19:17:40.074540"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нормативное сопротивление для пластичных материалов равно:"], ["test_id", 8], ["created_at", "2019-05-07 19:17:40.078466"], ["updated_at", "2019-05-07 19:17:40.078466"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какая страна обладает самой крупной экономикой?"], ["test_id", 9], ["created_at", "2019-05-07 19:17:40.082045"], ["updated_at", "2019-05-07 19:17:40.082045"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Что такое разность между лучшими ценами на продажу и на покупку?"], ["test_id", 10], ["created_at", "2019-05-07 19:17:40.085560"], ["updated_at", "2019-05-07 19:17:40.085560"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Война и Мир?"], ["test_id", 11], ["created_at", "2019-05-07 19:17:40.089255"], ["updated_at", "2019-05-07 19:17:40.089255"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Хроники Амбера?"], ["test_id", 12], ["created_at", "2019-05-07 19:17:40.092899"], ["updated_at", "2019-05-07 19:17:40.092899"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Исправение"], ["question_id", 7], ["created_at", "2019-05-07 19:17:40.102923"], ["updated_at", "2019-05-07 19:17:40.102923"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нагревание"], ["question_id", 7], ["created_at", "2019-05-07 19:17:40.106876"], ["updated_at", "2019-05-07 19:17:40.106876"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Предел текучести"], ["question_id", 8], ["created_at", "2019-05-07 19:17:40.110611"], ["updated_at", "2019-05-07 19:17:40.110611"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Предел прочности"], ["question_id", 8], ["created_at", "2019-05-07 19:17:40.115039"], ["updated_at", "2019-05-07 19:17:40.115039"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.7ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "США"], ["question_id", 9], ["created_at", "2019-05-07 19:17:40.166135"], ["updated_at", "2019-05-07 19:17:40.166135"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Китай"], ["question_id", 9], ["created_at", "2019-05-07 19:17:40.174426"], ["updated_at", "2019-05-07 19:17:40.174426"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Спред"], ["question_id", 10], ["created_at", "2019-05-07 19:17:40.180823"], ["updated_at", "2019-05-07 19:17:40.180823"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Бид"], ["question_id", 10], ["created_at", "2019-05-07 19:17:40.185126"], ["updated_at", "2019-05-07 19:17:40.185126"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Л.Н.Толстой"], ["question_id", 11], ["created_at", "2019-05-07 19:17:40.188616"], ["updated_at", "2019-05-07 19:17:40.188616"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "А.С.Пушкин"], ["question_id", 11], ["created_at", "2019-05-07 19:17:40.192812"], ["updated_at", "2019-05-07 19:17:40.192812"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Роджер Желязны"], ["question_id", 12], ["created_at", "2019-05-07 19:17:40.196253"], ["updated_at", "2019-05-07 19:17:40.196253"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Джордж Мартин"], ["question_id", 12], ["created_at", "2019-05-07 19:17:40.199542"], ["updated_at", "2019-05-07 19:17:40.199542"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иван"], ["middle_name", "Иванович"], ["surname", "Иванов"], ["created_at", "2019-05-07 19:17:40.209862"], ["updated_at", "2019-05-07 19:17:40.209862"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Алексей"], ["middle_name", "Алексеввич"], ["surname", "Алексеев"], ["created_at", "2019-05-07 19:17:40.213464"], ["updated_at", "2019-05-07 19:17:40.213464"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Инженерный"], ["created_at", "2019-05-07 19:18:34.965149"], ["updated_at", "2019-05-07 19:18:34.965149"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Экономический"], ["created_at", "2019-05-07 19:18:34.968844"], ["updated_at", "2019-05-07 19:18:34.968844"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Гуманитарный"], ["created_at", "2019-05-07 19:18:34.972527"], ["updated_at", "2019-05-07 19:18:34.972527"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Физика"], ["level", 2], ["category_id", 10], ["created_at", "2019-05-07 19:18:34.986711"], ["updated_at", "2019-05-07 19:18:34.986711"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Сопротивление материалов"], ["level", 3], ["category_id", 10], ["created_at", "2019-05-07 19:18:34.991086"], ["updated_at", "2019-05-07 19:18:34.991086"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Макроэкономика"], ["level", 2], ["category_id", 11], ["created_at", "2019-05-07 19:18:34.995035"], ["updated_at", "2019-05-07 19:18:34.995035"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Финансы"], ["level", 3], ["category_id", 11], ["created_at", "2019-05-07 19:18:34.999111"], ["updated_at", "2019-05-07 19:18:34.999111"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Отечестванная итература"], ["level", 2], ["category_id", 12], ["created_at", "2019-05-07 19:18:35.003533"], ["updated_at", "2019-05-07 19:18:35.003533"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иностранная литература"], ["level", 3], ["category_id", 12], ["created_at", "2019-05-07 19:18:35.007772"], ["updated_at", "2019-05-07 19:18:35.007772"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какой тепловой процесс сопровождается понижением температуры?"], ["test_id", 13], ["created_at", "2019-05-07 19:18:35.017141"], ["updated_at", "2019-05-07 19:18:35.017141"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нормативное сопротивление для пластичных материалов равно:"], ["test_id", 14], ["created_at", "2019-05-07 19:18:35.020740"], ["updated_at", "2019-05-07 19:18:35.020740"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какая страна обладает самой крупной экономикой?"], ["test_id", 15], ["created_at", "2019-05-07 19:18:35.024300"], ["updated_at", "2019-05-07 19:18:35.024300"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Что такое разность между лучшими ценами на продажу и на покупку?"], ["test_id", 16], ["created_at", "2019-05-07 19:18:35.027755"], ["updated_at", "2019-05-07 19:18:35.027755"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.4ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Война и Мир?"], ["test_id", 17], ["created_at", "2019-05-07 19:18:35.031527"], ["updated_at", "2019-05-07 19:18:35.031527"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Хроники Амбера?"], ["test_id", 18], ["created_at", "2019-05-07 19:18:35.035135"], ["updated_at", "2019-05-07 19:18:35.035135"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Исправение"], ["question_id", 13], ["created_at", "2019-05-07 19:18:35.044485"], ["updated_at", "2019-05-07 19:18:35.044485"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нагревание"], ["question_id", 13], ["created_at", "2019-05-07 19:18:35.048175"], ["updated_at", "2019-05-07 19:18:35.048175"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Предел текучести"], ["question_id", 14], ["created_at", "2019-05-07 19:18:35.051636"], ["updated_at", "2019-05-07 19:18:35.051636"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Предел прочности"], ["question_id", 14], ["created_at", "2019-05-07 19:18:35.054867"], ["updated_at", "2019-05-07 19:18:35.054867"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "США"], ["question_id", 15], ["created_at", "2019-05-07 19:18:35.058425"], ["updated_at", "2019-05-07 19:18:35.058425"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Китай"], ["question_id", 15], ["created_at", "2019-05-07 19:18:35.061860"], ["updated_at", "2019-05-07 19:18:35.061860"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Спред"], ["question_id", 16], ["created_at", "2019-05-07 19:18:35.065402"], ["updated_at", "2019-05-07 19:18:35.065402"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.6ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Бид"], ["question_id", 16], ["created_at", "2019-05-07 19:18:35.105951"], ["updated_at", "2019-05-07 19:18:35.105951"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Л.Н.Толстой"], ["question_id", 17], ["created_at", "2019-05-07 19:18:35.110148"], ["updated_at", "2019-05-07 19:18:35.110148"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.8ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "А.С.Пушкин"], ["question_id", 17], ["created_at", "2019-05-07 19:18:35.114580"], ["updated_at", "2019-05-07 19:18:35.114580"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.5ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Роджер Желязны"], ["question_id", 18], ["created_at", "2019-05-07 19:18:35.119192"], ["updated_at", "2019-05-07 19:18:35.119192"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Джордж Мартин"], ["question_id", 18], ["created_at", "2019-05-07 19:18:35.123024"], ["updated_at", "2019-05-07 19:18:35.123024"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иван"], ["middle_name", "Иванович"], ["surname", "Иванов"], ["created_at", "2019-05-07 19:18:35.132617"], ["updated_at", "2019-05-07 19:18:35.132617"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Алексей"], ["middle_name", "Алексеввич"], ["surname", "Алексеев"], ["created_at", "2019-05-07 19:18:35.136860"], ["updated_at", "2019-05-07 19:18:35.136860"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mResult Create (0.4ms)[0m  [1m[32mINSERT INTO "results" ("test_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["test_id", 13], ["user_id", 5], ["created_at", "2019-05-07 19:18:35.147821"], ["updated_at", "2019-05-07 19:18:35.147821"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mResult Load (1.4ms)[0m  [1m[34mSELECT  "results".* FROM "results" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mResult Load (2.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" join results on results.test_id = tests.id WHERE "tests"."level" = ? AND "results"."user_id" = ? LIMIT ?[0m  [["level", 2], ["user_id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" join results on results.test_id = tests.id WHERE "tests"."level" = ? AND "results"."user_id" = ? LIMIT ?[0m  [["level", 3], ["user_id", 5], ["LIMIT", 11]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddResultsNullConstraint (20190507205018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_user_id" ON "aresults" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aresults_on_test_id" ON "aresults" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_results_on_test_id" ON "results" ("test_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_results_on_user_id" ON "results" ("user_id")[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "results" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aresults"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateResults (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAssessments (20190506193312)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190506193312_create_assessments.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "test_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_512f29d9e0"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+, CONSTRAINT "fk_rails_37481ee5bf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190506193312_create_assessments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_test_id" ON "assessments" ("test_id")[0m
+  ↳ db/migrate/20190506193312_create_assessments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_user_id" ON "assessments" ("user_id")[0m
+  ↳ db/migrate/20190506193312_create_assessments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190506193312"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddAssessmentsNullConstraint (20190507205018)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassessments" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassessments_on_user_id" ON "aassessments" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassessments_on_test_id" ON "aassessments" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aassessments" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "assessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "assessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_test_id" ON "assessments" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_user_id" ON "assessments" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "assessments" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aassessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aassessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassessments" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassessments_on_user_id" ON "aassessments" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassessments_on_test_id" ON "aassessments" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aassessments" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "assessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "assessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer NOT NULL PRIMARY KEY, "test_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_test_id" ON "assessments" ("test_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assessments_on_user_id" ON "assessments" ("user_id")[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "assessments" ("id","test_id","user_id","created_at","updated_at")
+                     SELECT "id","test_id","user_id","created_at","updated_at" FROM "aassessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aassessments"[0m
+  ↳ db/migrate/20190507205018_add_assessments_null_constraint.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507205018"]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/glc/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (1.5ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Инженерный"], ["created_at", "2019-05-07 19:38:30.638304"], ["updated_at", "2019-05-07 19:38:30.638304"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Экономический"], ["created_at", "2019-05-07 19:38:30.646439"], ["updated_at", "2019-05-07 19:38:30.646439"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Гуманитарный"], ["created_at", "2019-05-07 19:38:30.649324"], ["updated_at", "2019-05-07 19:38:30.649324"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (1.9ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Физика"], ["level", 2], ["category_id", 13], ["created_at", "2019-05-07 19:38:30.679811"], ["updated_at", "2019-05-07 19:38:30.679811"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Сопротивление материалов"], ["level", 3], ["category_id", 13], ["created_at", "2019-05-07 19:38:30.686969"], ["updated_at", "2019-05-07 19:38:30.686969"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Макроэкономика"], ["level", 2], ["category_id", 14], ["created_at", "2019-05-07 19:38:30.690953"], ["updated_at", "2019-05-07 19:38:30.690953"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Финансы"], ["level", 3], ["category_id", 14], ["created_at", "2019-05-07 19:38:30.694922"], ["updated_at", "2019-05-07 19:38:30.694922"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Отечестванная итература"], ["level", 2], ["category_id", 15], ["created_at", "2019-05-07 19:38:30.698922"], ["updated_at", "2019-05-07 19:38:30.698922"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTest Create (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("name", "level", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иностранная литература"], ["level", 3], ["category_id", 15], ["created_at", "2019-05-07 19:38:30.702930"], ["updated_at", "2019-05-07 19:38:30.702930"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.5ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какой тепловой процесс сопровождается понижением температуры?"], ["test_id", 19], ["created_at", "2019-05-07 19:38:30.713050"], ["updated_at", "2019-05-07 19:38:30.713050"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нормативное сопротивление для пластичных материалов равно:"], ["test_id", 20], ["created_at", "2019-05-07 19:38:30.715525"], ["updated_at", "2019-05-07 19:38:30.715525"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Какая страна обладает самой крупной экономикой?"], ["test_id", 21], ["created_at", "2019-05-07 19:38:30.718804"], ["updated_at", "2019-05-07 19:38:30.718804"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Что такое разность между лучшими ценами на продажу и на покупку?"], ["test_id", 22], ["created_at", "2019-05-07 19:38:30.721923"], ["updated_at", "2019-05-07 19:38:30.721923"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Война и Мир?"], ["test_id", 23], ["created_at", "2019-05-07 19:38:30.725163"], ["updated_at", "2019-05-07 19:38:30.725163"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mQuestion Create (0.3ms)[0m  [1m[32mINSERT INTO "questions" ("body", "test_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Кто написал Хроники Амбера?"], ["test_id", 24], ["created_at", "2019-05-07 19:38:30.728276"], ["updated_at", "2019-05-07 19:38:30.728276"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Исправение"], ["question_id", 19], ["created_at", "2019-05-07 19:38:30.738895"], ["updated_at", "2019-05-07 19:38:30.738895"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Нагревание"], ["question_id", 19], ["created_at", "2019-05-07 19:38:30.743266"], ["updated_at", "2019-05-07 19:38:30.743266"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Предел текучести"], ["question_id", 20], ["created_at", "2019-05-07 19:38:30.747261"], ["updated_at", "2019-05-07 19:38:30.747261"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Предел прочности"], ["question_id", 20], ["created_at", "2019-05-07 19:38:30.751192"], ["updated_at", "2019-05-07 19:38:30.751192"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "США"], ["question_id", 21], ["created_at", "2019-05-07 19:38:30.755138"], ["updated_at", "2019-05-07 19:38:30.755138"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Китай"], ["question_id", 21], ["created_at", "2019-05-07 19:38:30.758695"], ["updated_at", "2019-05-07 19:38:30.758695"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Спред"], ["question_id", 22], ["created_at", "2019-05-07 19:38:30.762364"], ["updated_at", "2019-05-07 19:38:30.762364"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Бид"], ["question_id", 22], ["created_at", "2019-05-07 19:38:30.766108"], ["updated_at", "2019-05-07 19:38:30.766108"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Л.Н.Толстой"], ["question_id", 23], ["created_at", "2019-05-07 19:38:30.768922"], ["updated_at", "2019-05-07 19:38:30.768922"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.3ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "А.С.Пушкин"], ["question_id", 23], ["created_at", "2019-05-07 19:38:30.782560"], ["updated_at", "2019-05-07 19:38:30.782560"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at", "correct") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Роджер Желязны"], ["question_id", 24], ["created_at", "2019-05-07 19:38:30.786639"], ["updated_at", "2019-05-07 19:38:30.786639"], ["correct", 1]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mAnswer Create (0.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Джордж Мартин"], ["question_id", 24], ["created_at", "2019-05-07 19:38:30.790104"], ["updated_at", "2019-05-07 19:38:30.790104"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Иван"], ["middle_name", "Иванович"], ["surname", "Иванов"], ["created_at", "2019-05-07 19:38:30.801413"], ["updated_at", "2019-05-07 19:38:30.801413"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "middle_name", "surname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Алексей"], ["middle_name", "Алексеввич"], ["surname", "Алексеев"], ["created_at", "2019-05-07 19:38:30.806539"], ["updated_at", "2019-05-07 19:38:30.806539"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mAssessment Create (1.6ms)[0m  [1m[32mINSERT INTO "assessments" ("test_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["test_id", 19], ["user_id", 7], ["created_at", "2019-05-07 19:38:30.818324"], ["updated_at", "2019-05-07 19:38:30.818324"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mAssessment Load (1.5ms)[0m  [1m[34mSELECT  "assessments".* FROM "assessments" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" join assessments on assessments.test_id = tests.id WHERE "tests"."level" = ? AND "assessments"."user_id" = ? LIMIT ?[0m  [["level", 2], ["user_id", 7], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tests" join assessments on assessments.test_id = tests.id WHERE "tests"."level" = ? AND "assessments"."user_id" = ?[0m  [["level", 2], ["user_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "tests" join assessments on assessments.test_id = tests.id WHERE "tests"."level" = ? AND "assessments"."user_id" = ?[0m  [["level", 3], ["user_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инжереный"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерный"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерный"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Инженерныsй"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT tests.name FROM "tests" join categories on categories.id = tests.category_id WHERE "categories"."title" = ? ORDER BY "tests"."name" DESC[0m  [["title", "Гуманитарный"]]

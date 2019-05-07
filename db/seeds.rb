@@ -13,12 +13,12 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-    { title: 'Физика', level: 2, category_id: categories[0].id },
-    { title: 'Сопротивление материалов', level: 3, category_id: categories[0].id },
-    { title: 'Макроэкономика', level: 2, category_id: categories[1].id },
-    { title: 'Финансы', level: 3, category_id: categories[1].id },
-    { title: 'Отечестванная итература', level: 2, category_id: categories[2].id },
-    { title: 'Иностранная литература', level: 3, category_id: categories[2].id }
+    { name: 'Физика', level: 2, category_id: categories[0].id },
+    { name: 'Сопротивление материалов', level: 3, category_id: categories[0].id },
+    { name: 'Макроэкономика', level: 2, category_id: categories[1].id },
+    { name: 'Финансы', level: 3, category_id: categories[1].id },
+    { name: 'Отечестванная итература', level: 2, category_id: categories[2].id },
+    { name: 'Иностранная литература', level: 3, category_id: categories[2].id }
 ])
 
 questions = Question.create!([
@@ -46,6 +46,10 @@ answers = Answer.create!([
 ])
 
 users = User.create!([
-    {name: 'Иван', middle_name: 'Иванович', surname: 'Иванов'},
-    {name: 'Алексей', middle_name: 'Алексеввич', surname: 'Алексеев'}
+    { name: 'Иван', middle_name: 'Иванович', surname: 'Иванов' },
+    { name: 'Алексей', middle_name: 'Алексеввич', surname: 'Алексеев' }
+])
+
+assessments = Assessment.create!([
+    { user_id: users[0].id, test_id: tests[0].id }
 ])
