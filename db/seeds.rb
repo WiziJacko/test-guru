@@ -12,13 +12,18 @@ categories = Category.create!([
     { title: 'Гуманитарный' }
 ])
 
+users = User.create!([
+    { name: 'Иван', middle_name: 'Иванович', surname: 'Иванов' },
+    { name: 'Алексей', middle_name: 'Алексеввич', surname: 'Алексеев' }
+])
+
 tests = Test.create!([
-    { name: 'Физика', level: 2, category_id: categories[0].id },
-    { name: 'Сопротивление материалов', level: 3, category_id: categories[0].id },
-    { name: 'Макроэкономика', level: 2, category_id: categories[1].id },
-    { name: 'Финансы', level: 3, category_id: categories[1].id },
-    { name: 'Отечестванная итература', level: 2, category_id: categories[2].id },
-    { name: 'Иностранная литература', level: 3, category_id: categories[2].id }
+    { name: 'Физика', level: 2, category_id: categories[0].id, author_id: users[0].id },
+    { name: 'Сопротивление материалов', level: 3, category_id: categories[0].id, author_id: users[0].id },
+    { name: 'Макроэкономика', level: 2, category_id: categories[1].id, author_id: users[0].id },
+    { name: 'Финансы', level: 3, category_id: categories[1].id, author_id: users[0].id },
+    { name: 'Отечестванная литература', level: 2, category_id: categories[2].id, author_id: users[0].id },
+    { name: 'Иностранная литература', level: 3, category_id: categories[2].id, author_id: users[0].id }
 ])
 
 questions = Question.create!([
@@ -45,11 +50,8 @@ answers = Answer.create!([
     { body: 'Джордж Мартин', question_id: questions[5].id }
 ])
 
-users = User.create!([
-    { name: 'Иван', middle_name: 'Иванович', surname: 'Иванов' },
-    { name: 'Алексей', middle_name: 'Алексеввич', surname: 'Алексеев' }
-])
-
-assessments = Assessment.create!([
-    { user_id: users[0].id, test_id: tests[0].id }
+tests_users = TestsUser.create!([
+    { user_id: users[0].id, test_id: tests[0].id },
+    { user_id: users[0].id, test_id: tests[1].id },
+    { user_id: users[1].id, test_id: tests[0].id }
 ])
