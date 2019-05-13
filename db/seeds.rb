@@ -1,5 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the rails db:seed command (or created alonge the database with db:setup).
 #
 # Examples:
 #
@@ -18,40 +18,40 @@ users = User.create!([
 ])
 
 tests = Test.create!([
-    { name: 'Физика', level: 2, category_id: categories[0].id, author_id: users[0].id },
-    { name: 'Сопротивление материалов', level: 3, category_id: categories[0].id, author_id: users[0].id },
-    { name: 'Макроэкономика', level: 2, category_id: categories[1].id, author_id: users[0].id },
-    { name: 'Финансы', level: 3, category_id: categories[1].id, author_id: users[0].id },
-    { name: 'Отечестванная литература', level: 2, category_id: categories[2].id, author_id: users[0].id },
-    { name: 'Иностранная литература', level: 3, category_id: categories[2].id, author_id: users[0].id }
+    { name: 'Физика', level: 2, category: categories[0], author: users[0] },
+    { name: 'Сопротивление материалов', level: 3, category: categories[0], author: users[0] },
+    { name: 'Макроэкономика', level: 2, category: categories[1], author: users[0] },
+    { name: 'Финансы', level: 3, category: categories[1], author: users[0] },
+    { name: 'Отечестванная литература', level: 2, category: categories[2], author: users[0] },
+    { name: 'Иностранная литература', level: 3, category: categories[2], author: users[0] }
 ])
 
 questions = Question.create!([
-    { body: 'Какой тепловой процесс сопровождается понижением температуры?', test_id: tests[0].id },
-    { body: 'Нормативное сопротивление для пластичных материалов равно:', test_id: tests[1].id },
-    { body: 'Какая страна обладает самой крупной экономикой?', test_id: tests[2].id },
-    { body: 'Что такое разность между лучшими ценами на продажу и на покупку?', test_id: tests[3].id },
-    { body: 'Кто написал Война и Мир?', test_id: tests[4].id },
-    { body: 'Кто написал Хроники Амбера?', test_id: tests[5].id }
+    { body: 'Какой тепловой процесс сопровождается понижением температуры?', test: tests[0] },
+    { body: 'Нормативное сопротивление для пластичных материалов равно:', test: tests[1] },
+    { body: 'Какая страна обладает самой крупной экономикой?', test: tests[2] },
+    { body: 'Что такое разность между лучшими ценами на продажу и на покупку?', test: tests[3] },
+    { body: 'Кто написал Война и Мир?', test: tests[4] },
+    { body: 'Кто написал Хроники Амбера?', test: tests[5] }
 ])
 
 answers = Answer.create!([
-    { body: 'Исправение', question_id: questions[0].id, correct: true },
-    { body: 'Нагревание', question_id: questions[0].id },
-    { body: 'Предел текучести', question_id: questions[1].id, correct: true },
-    { body: 'Предел прочности', question_id: questions[1].id },
-    { body: 'США', question_id: questions[2].id, correct: true },
-    { body: 'Китай', question_id: questions[2].id },
-    { body: 'Спред', question_id: questions[3].id, correct: true },
-    { body: 'Бид', question_id: questions[3].id },
-    { body: 'Л.Н.Толстой', question_id: questions[4].id, correct: true },
-    { body: 'А.С.Пушкин', question_id: questions[4].id },
-    { body: 'Роджер Желязны', question_id: questions[5].id, correct: true },
-    { body: 'Джордж Мартин', question_id: questions[5].id }
+    { body: 'Исправение', question: questions[0], correct: true },
+    { body: 'Нагревание', question: questions[0] },
+    { body: 'Предел текучести', question: questions[1], correct: true },
+    { body: 'Предел прочности', question: questions[1] },
+    { body: 'США', question: questions[2], correct: true },
+    { body: 'Китай', question: questions[2] },
+    { body: 'Спред', question: questions[3], correct: true },
+    { body: 'Бид', question: questions[3] },
+    { body: 'Л.Н.Толстой', question: questions[4], correct: true },
+    { body: 'А.С.Пушкин', question: questions[4] },
+    { body: 'Роджер Желязны', question: questions[5], correct: true },
+    { body: 'Джордж Мартин', question: questions[5] }
 ])
 
 tests_users = TestsUser.create!([
-    { user_id: users[0].id, test_id: tests[0].id },
-    { user_id: users[0].id, test_id: tests[1].id },
-    { user_id: users[1].id, test_id: tests[0].id }
+    { user: users[0], test: tests[0] },
+    { user: users[0], test: tests[1] },
+    { user: users[1], test: tests[0] }
 ])
